@@ -1,0 +1,56 @@
+name: 🙋 Contributor application
+description: Introduce yourself and the public work you'd like to help with
+labels: ["contributor application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! You do **not** need to apply to contribute — anyone can open a
+        PR. This form is optional, for people who want to take on a larger public
+        role over time. Please share only public professional information. Do not
+        include private contact details you don't want public.
+  - type: input
+    id: github
+    attributes:
+      label: Your GitHub username
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area of interest
+      multiple: true
+      options:
+        - Backend (Python / FastAPI)
+        - Frontend (TypeScript / React)
+        - Tests & quality assurance
+        - Documentation
+        - Accessibility
+        - Security
+        - Developer experience
+        - Observability / receipts
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Relevant public experience
+      description: Link public repositories, PRs, or issues that show relevant work.
+    validations:
+      required: true
+  - type: textarea
+    id: interest
+    attributes:
+      label: What would you like to work on first?
+      description: Optionally link a `good first issue` or `help wanted` issue.
+    validations:
+      required: false
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Agreements
+      options:
+        - label: I have read and agree to the Code of Conduct and Contributing guide.
+          required: true
+        - label: I understand that trust and access are earned through public contribution, not granted on application, and that sponsorship confers no special access.
+          required: true

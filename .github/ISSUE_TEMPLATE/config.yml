@@ -1,0 +1,18 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Report a security vulnerability (private)
+    url: https://github.com/8x8org/8x8-user-edition/security/advisories/new
+    about: >-
+      Never report vulnerabilities in a public issue. Use GitHub private
+      vulnerability reporting. See SECURITY.md. Do not post credential values or
+      exploit details publicly.
+  - name: 💬 Community & usage questions
+    url: https://github.com/8x8org/8x8-user-edition/issues
+    about: >-
+      For general questions, search existing issues first, then open a
+      Documentation improvement issue.
+  - name: ❤️ Sponsor 8x8
+    url: https://github.com/sponsors/8x8org
+    about: >-
+      Sponsorship supports public documentation, testing, security hardening,
+      accessibility, tooling, community maintenance, and bounded infrastructure.

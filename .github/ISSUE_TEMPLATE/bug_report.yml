@@ -1,0 +1,57 @@
+name: 🐛 Bug report
+description: Report a defect in a public 8x8 project
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. **Do not** include credential values, wallet
+        material, private-system paths, or exploit details. For security issues,
+        use private vulnerability reporting instead (see SECURITY.md).
+  - type: input
+    id: repo
+    attributes:
+      label: Affected public repository / revision
+      placeholder: "8x8-user-edition @ <commit or version>"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Use public-safe test data only.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs. actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser / OS / version, as relevant.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety confirmation
+      options:
+        - label: This report contains no credentials, private keys, or private-system data.
+          required: true
+        - label: This is not a security vulnerability (those go through private reporting).
+          required: true

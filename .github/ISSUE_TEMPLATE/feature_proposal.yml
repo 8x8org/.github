@@ -1,0 +1,44 @@
+name: 💡 Feature proposal
+description: Propose a new feature or enhancement (issue-first for substantial changes)
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Substantial changes require an issue **before** a pull request. Please
+        keep proposals within public-safe scope — no private-system or
+        private-control-plane dependencies.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem does this solve, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: input
+    id: components
+    attributes:
+      label: Likely components / files involved
+    validations:
+      required: false
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: This stays within public-safe scope (no private repos, credentials, or control-plane access).
+          required: true
+        - label: I understand a maintainer must agree on the approach before implementation, and that not every proposal is accepted.
+          required: true

@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/8x8org/8x8-user-edition">Public User Edition</a> ·
   <a href="https://github.com/8x8org/8x8-protocol">Public Protocol</a> ·
-  <a href="https://github.com/8x8org/8x8-user-edition/tree/feature/msg214-full-product-surfaces-v1/art-board">Global Art Board source</a> ·
+  <a href="https://github.com/8x8org/8x8-user-edition/pull/35">Global Art Board release work</a> ·
   <a href="https://github.com/sponsors/8x8org">Sponsor public development</a>
 </p>
 
@@ -103,7 +103,7 @@ A public client is an isolated consumer of public capabilities. It is not a down
 ## Product targets, not live claims
 
 - Target monthly unit: **USD 8.88**
-- Target free allowance: **88 auditable service minutes**
+- Target introductory allowance: **one 88-minute, server-metered trial per eligible profile before paid use**
 - Live billing: **not active**
 - Public installer: **not released**
 - Live treasury balances: **not published**
@@ -121,7 +121,7 @@ Contributions are welcome in code, tests, documentation, accessibility, design, 
 
 - Read [`CONTRIBUTING.md`](../CONTRIBUTING.md).
 - Follow the [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md).
-- Report security concerns using the private route described in the repository security policy.
+- Report security concerns privately through [`SECURITY.md`](../SECURITY.md).
 - Never post credentials, wallet material, personal identifiers, precise user locations or private-system topology in public issues.
 
 ## Governance

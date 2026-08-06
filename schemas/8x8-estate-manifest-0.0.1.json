@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/8x8org/.github/schemas/8x8-estate-manifest-0.0.1.json",
+  "title": "8x8 Estate Manifest 0.0.1",
+  "type": "object",
+  "required": ["product_version", "generated_at", "objects"],
+  "properties": {
+    "product_version": {"const": "0.0.1"},
+    "maturity": {"const": "beta"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["object_id", "object_type", "canonical_owner", "constitutional_domain", "reality", "evidence_state", "sensitivity", "canonical"],
+        "properties": {
+          "object_id": {"type": "string", "minLength": 1},
+          "object_type": {"enum": ["HUMAN", "AGENT", "BODY", "NODE", "SERVICE", "REPOSITORY", "DATABASE", "MODEL", "PROVIDER", "CONNECTOR", "CAPABILITY", "MISSION", "ARTIFACT", "ASSET", "AUTOMATION", "DEPLOYMENT", "RECEIPT", "POLICY", "PROJECT"]},
+          "canonical_owner": {"type": "string", "minLength": 1},
+          "constitutional_domain": {"enum": ["SOVEREIGNTY", "RUNTIME", "COORDINATION", "INTELLIGENCE", "MEMORY", "EVIDENCE", "SECURITY", "REALITY", "EXPERIENCE", "STUDIO", "ECONOMY", "ECOSYSTEM"]},
+          "reality": {"enum": ["PRIVATE_PAST", "PUBLIC_PRESENT", "FUTURE_LAB"]},
+          "promotion_state": {"type": ["string", "null"], "enum": ["PROTECTED_BETA", null]},
+          "evidence_state": {"enum": ["UNKNOWN", "REPORTED", "OBSERVED", "IMPLEMENTED", "TESTED", "VERIFIED", "RUNNING", "DEPLOYED", "PUBLICLY_RELEASED", "REVOKED", "SUPERSEDED"]},
+          "source_location": {"type": ["string", "null"]},
+          "observed_at": {"type": ["string", "null"], "format": "date-time"},
+          "fresh_until": {"type": ["string", "null"], "format": "date-time"},
+          "digest": {"type": ["string", "null"], "pattern": "^(sha256:[a-f0-9]{64})?$"},
+          "sensitivity": {"enum": ["PUBLIC", "INTERNAL", "PRIVATE", "SECRET"]},
+          "canonical": {"type": "boolean"},
+          "supersedes": {"type": "array", "items": {"type": "string"}, "default": []},
+          "depends_on": {"type": "array", "items": {"type": "string"}, "default": []},
+          "rollback_reference": {"type": ["string", "null"]},
+          "open_blockers": {"type": "array", "items": {"type": "string"}, "default": []}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

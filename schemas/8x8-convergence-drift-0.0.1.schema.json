@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8x8.org/schemas/8x8-convergence-drift-0.0.1.schema.json",
+  "title": "8x8 Total Estate Convergence and Drift Record",
+  "type": "object",
+  "required": [
+    "product_version",
+    "record_id",
+    "generated_at",
+    "source_snapshot_digest",
+    "objects",
+    "summary",
+    "whole_system_completion_inferred"
+  ],
+  "properties": {
+    "product_version": {"const": "0.0.1"},
+    "record_id": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "source_snapshot_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "object_id",
+          "object_type",
+          "canonical_owner",
+          "reality",
+          "maturity",
+          "evidence_state",
+          "evidence_confidence",
+          "drift_state",
+          "observed_at",
+          "freshness_seconds",
+          "dependencies",
+          "required_by",
+          "rollback_reference"
+        ],
+        "properties": {
+          "object_id": {"type": "string", "minLength": 1},
+          "object_type": {"type": "string", "minLength": 1},
+          "canonical_owner": {"type": "string", "minLength": 1},
+          "reality": {"enum": ["PRIVATE_PAST", "PUBLIC_PRESENT", "FUTURE_LAB"]},
+          "promotion_state": {"type": ["string", "null"], "enum": ["PROTECTED_BETA", null]},
+          "maturity": {"enum": ["CONCEPT", "DESIGNED", "PROTOTYPE", "REFERENCE", "IMPLEMENTED", "VERIFIED", "CANARY", "PROTECTED_BETA", "PUBLIC_BETA", "STABLE", "RETIRED"]},
+          "evidence_state": {"enum": ["UNKNOWN", "REPORTED", "OBSERVED", "INFERRED", "PLANNED", "APPROVED", "IMPLEMENTED", "VERIFIED", "RUNNING", "DEPLOYED", "PUBLICLY_RELEASED", "STALE", "SUPERSEDED", "BLOCKED", "REVOKED"]},
+          "evidence_confidence": {"type": "integer", "minimum": 0, "maximum": 100},
+          "drift_state": {"enum": ["UNCHANGED", "NEW", "CHANGED", "REMOVED", "STALE", "UNKNOWN", "CONFLICT"]},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "freshness_seconds": {"type": "integer", "minimum": 0},
+          "digest": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "required_by": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "active_lease_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "test_receipts": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "rollback_reference": {"type": ["string", "null"]},
+          "contradiction_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total", "new", "changed", "removed", "stale", "unknown", "conflict"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "new": {"type": "integer", "minimum": 0},
+        "changed": {"type": "integer", "minimum": 0},
+        "removed": {"type": "integer", "minimum": 0},
+        "stale": {"type": "integer", "minimum": 0},
+        "unknown": {"type": "integer", "minimum": 0},
+        "conflict": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "whole_system_completion_inferred": {"const": false}
+  },
+  "additionalProperties": false
+}

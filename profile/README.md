@@ -1,129 +1,101 @@
 # 8x8 OS
 
 <p align="center">
-  <strong>Evidence-backed human–AI coordination, public protocols, spatial interfaces and user-owned workspaces.</strong>
+  <strong>Evidence-governed operating system for human and AI organizations.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/8x8org/8x8-user-edition">Public User Edition</a> ·
-  <a href="https://github.com/8x8org/8x8-protocol">Public Protocol</a> ·
-  <a href="https://github.com/8x8org/8x8-user-edition/pull/35">Global Art Board release work</a> ·
-  <a href="https://github.com/sponsors/8x8org">Sponsor public development</a>
+  <strong>Product version 0.0.1 · Beta · Not fully stable · Not whole-system complete</strong>
 </p>
 
-## The public 8x8 universe
+<p align="center">
+  <a href="https://github.com/8x8org/8x8-user-edition">User Edition</a> ·
+  <a href="https://github.com/8x8org/8x8-protocol">Protocol</a> ·
+  <a href="https://github.com/8x8org/.github/blob/main/docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md">Total Estate Census</a> ·
+  <a href="https://github.com/8x8org/.github/blob/main/docs/8X8_VERSION_AND_THREE_REALITY_POLICY_0.0.1.md">Version & Reality Policy</a>
+</p>
 
-8x8 OS is being released as independently testable **release units**. A small public-safe slice may ship when that slice reaches 100/100 against its own declared scope, while unfinished or private capabilities remain visibly incomplete.
+## One system across Past, Present and Future
 
-`1% of product scope at 100/100 ≠ whole system at 100%`
+Past, Present and Future are native operating realities inside 8x8, not marketing language.
 
-The public visual model uses a zoomable 8×8 Art Board:
+| Reality | Meaning |
+|---|---|
+| **Private Past** | Sovereign runtime history, private agents, memory, evidence, services, recovery state and superseded work |
+| **Public Present** | Privacy-safe, evidence-backed public projection of the current 0.0.1 beta |
+| **Future Lab** | Research, designs, simulations, candidate capabilities and unpromoted prototypes |
+| **Protected Beta** | Promotion state between Future Lab and Public Present, not a fourth reality |
 
-- **green** — healthy or release-ready inside the displayed scope;
-- **cyan** — verified information or read-only state;
-- **yellow** — incomplete dependency or warning;
-- **orange** — degraded or awaiting review;
-- **red** — down or blocked;
-- **black/gray** — unknown, stale, hidden or disabled;
-- **purple** — planned or experimental.
+Every repository, mission, agent, body, service, connector, model, deployment, asset and public claim should declare its reality and evidence state.
 
-Every public status must link to evidence. Decorative telemetry is not operational truth.
+## The complete 8x8 estate
 
-## Current public repositories
+GitHub is only one projection. The full system spans twelve constitutional domains:
 
-| Repository | Public purpose | Current public truth |
+1. sovereignty and owner control;
+2. local and cloud runtime;
+3. Hermes coordination and councils;
+4. models, providers and intelligence;
+5. memory, messages and continuity;
+6. evidence, tests, receipts and rollback;
+7. security, identity and permissions;
+8. reality promotion and demotion;
+9. terminal, mobile, web, voice and spatial experience;
+10. Studio, media and visual provenance;
+11. venture, contribution value, testnet and crypto research;
+12. repositories, connectors, Academy, plugins and community ecosystem.
+
+The canonical census scope and manifest schema are maintained in:
+
+- [`docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md`](../docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md)
+- [`schemas/8x8-estate-manifest-0.0.1.json`](../schemas/8x8-estate-manifest-0.0.1.json)
+- [`registry/8x8-connected-repositories-0.0.1.json`](../registry/8x8-connected-repositories-0.0.1.json)
+
+## Public repositories
+
+| Repository | Public role | Current truth |
 |---|---|---|
-| [`8x8-user-edition`](https://github.com/8x8org/8x8-user-edition) | Static public client, cockpit and Global Art Board | Public-safe implementation; release work remains evidence-gated |
-| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Permission, identity, entitlement, release-unit, plugin, privacy and evidence contracts | Contracts under review; no private authority |
-| [`.github`](https://github.com/8x8org/.github) | Organization governance, contribution and public product map | Public documentation |
+| [`8x8-user-edition`](https://github.com/8x8org/8x8-user-edition) | Public-safe client, cockpit and Art Board | 0.0.1 beta; evidence-gated; no private control access |
+| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Public permission, identity, evidence and compatibility contracts | 0.0.1 beta contracts under review |
+| [`.github`](https://github.com/8x8org/.github) | Organization governance, census, public projection and contribution rules | Public documentation and policy |
 
-Additional repositories may be promoted only after ownership, security, privacy, licensing and public/private boundary review.
+Other public repositories under the owner account remain part of the broader connected estate and are classified in the repository registry. Additional components may enter the Public Present only after security, privacy, license, provenance, accessibility, evidence and rollback review.
 
-## Public product direction
+## Evidence before claims
 
-The public product family may include:
+The public evidence ladder is:
 
-- browser and installable PWA;
-- Android and iOS shells;
-- CLI, SDK and MCP-compatible tools;
-- ChatGPT-style connector and public APIs;
-- Telegram Mini App and Discord integration;
-- privacy-preserving global and regional presence maps;
-- browser spatial world, Roblox community world and Unreal/OpenUSD digital twin;
-- Vectras, virtual-machine and ROM clients;
-- community-created 8x8-compatible plugins.
+`CLAIMED → DESIGNED → IMPLEMENTED → TESTED → VERIFIED → RUNNING → DEPLOYED → PUBLICLY_RELEASED → ADOPTED`
 
-A listed direction is not automatically a live service. Exact status belongs in evidence and release manifests.
-
-## Developer extension model
-
-Community tools must follow the 8x8 plugin contract:
-
-1. stable plugin ID and semantic version;
-2. `8x8-compatible` label;
-3. deny-by-default permissions;
-4. declared capability imports and exports;
-5. CPU, memory, storage, timeout and network limits;
-6. public/private data classes;
-7. source commit, license, SBOM and signature;
-8. conformance, security, resource and rollback tests;
-9. no autonomous financial authority;
-10. removable integration with a tested rollback.
-
-Upstream open-source projects retain their authorship and licenses. 8x8 compatibility or modification does not erase upstream ownership, permit relicensing without authority, or allow private code to be republished.
-
-## Presence and location privacy
-
-Global community maps are opt-in. Users may choose:
-
-- hidden;
-- global-only presence;
-- country;
-- region;
-- approximate city;
-- precise temporary location for a defined purpose.
-
-Precise coordinates are never the default. Presence expires, is revocable, and must not expose IP addresses, device identifiers or private profile data.
+A README, screenshot, issue, commit or design does not by itself prove deployment or stability. No public surface should claim that 8x8 is `1.0`, stable, 100/100, fully complete or universally deployed while the system remains 0.0.1 beta.
 
 ## Public/private boundary
 
-This organization does **not** publish or provide:
+This organization does not publish or grant:
 
-- owner credentials or signing keys;
-- private wallets or wallet authority;
-- private repositories, messages, memory or prompts;
+- owner credentials, signing keys or private wallets;
+- private repositories, messages, memory, prompts or raw telemetry;
 - privileged device, shell, service or database access;
-- raw private telemetry;
-- internal provider routing;
-- unrestricted autonomous financial action;
+- unrestricted autonomous financial authority;
 - the private 8x8 control plane.
 
-A public client is an isolated consumer of public capabilities. It is not a downloadable copy of the owner system.
+Public clients are isolated consumers of approved public capabilities. They are not downloadable copies of the owner system.
 
-## Product targets, not live claims
+## Product direction
 
-- Target monthly unit: **USD 8.88**
-- Target introductory allowance: **one 88-minute, server-metered trial per eligible profile before paid use**
-- Live billing: **not active**
-- Public installer: **not released**
-- Live treasury balances: **not published**
-- Guaranteed profit, token value, APY, zero fees or zero latency: **not promised**
+Public-safe release units may include browser and installable clients, mobile shells, CLI and SDK tools, permissioned connectors, public APIs, privacy-preserving maps, worlds, Studio surfaces, Academy content and community-created 8x8-compatible plugins.
 
-## Evidence ladder
-
-`CLAIMED → DESIGNED → IMPLEMENTED → TESTED → RECEIPT_VERIFIED → RUNNING → DEPLOYED → PUBLICLY_RELEASED → ADOPTED`
-
-README text establishes a claim, not production truth.
+A listed direction is not automatically implemented, deployed or publicly released. Exact status belongs in the estate manifest and evidence receipts.
 
 ## Contributing
 
-Contributions are welcome in code, tests, documentation, accessibility, design, security review, protocol contracts and public-safe plugins.
+Contributions are welcome in code, tests, documentation, accessibility, design, security review, protocol contracts, schemas and public-safe plugins.
 
 - Read [`CONTRIBUTING.md`](../CONTRIBUTING.md).
-- Follow the [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md).
-- Report security concerns privately through [`SECURITY.md`](../SECURITY.md).
-- Never post credentials, wallet material, personal identifiers, precise user locations or private-system topology in public issues.
+- Follow [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md).
+- Report security concerns through [`SECURITY.md`](../SECURITY.md).
+- Never publish credentials, wallet material, personal identifiers, precise user locations or private-system topology.
 
 ## Governance
 
-8x8 public development is evidence-gated and permission-first. Public collaboration does not grant private owner authority, financial authority or access to the private control plane. See [`GOVERNANCE.md`](../GOVERNANCE.md).
+8x8 development is owner-sovereign, permission-first and evidence-gated. Public collaboration grants no private owner authority, financial authority or access to the private control plane. See [`GOVERNANCE.md`](../GOVERNANCE.md).

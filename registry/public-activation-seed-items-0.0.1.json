@@ -1,0 +1,22 @@
+{
+  "product_version": "0.0.1",
+  "program": "MSG238",
+  "reality": "PUBLIC_PRESENT",
+  "promotion_state": "PROTECTED_BETA",
+  "generated_at": "2026-08-06T13:42:00Z",
+  "project_target": "8x8 OS Public Program",
+  "discussion_target": "8x8-user-edition Discussions",
+  "seed_items": [
+    {"title": "MSG237 total-estate convergence and drift control", "lane": "Unified Program Sentinel", "status": "IN_PROGRESS", "priority": "P0"},
+    {"title": "8x8 Protocol coordination kernel PR #7", "lane": "Crypto & Multichain", "status": "IN_REVIEW", "priority": "P0"},
+    {"title": "User Edition 0.0.1 alignment PR #93", "lane": "Content Studio", "status": "IN_REVIEW", "priority": "P0"},
+    {"title": "Public-safe Truth Console", "lane": "Content Studio", "status": "PROTECTED_BETA", "priority": "P1"},
+    {"title": "Repository role manifests and modernization", "lane": "Unified Program Sentinel", "status": "PLANNED", "priority": "P1"},
+    {"title": "Accessibility and mobile review", "lane": "Content Studio", "status": "CONTRIBUTOR_READY", "priority": "P1"},
+    {"title": "Academy examples and onboarding", "lane": "Content Studio", "status": "CONTRIBUTOR_READY", "priority": "P1"},
+    {"title": "Public claims verifier", "lane": "Unified Program Sentinel", "status": "PLANNED", "priority": "P1"},
+    {"title": "Visual identity and social-preview package", "lane": "Content Studio", "status": "CONTRIBUTOR_READY", "priority": "P1"},
+    {"title": "Contributor onboarding and first-task set", "lane": "Communications Brief", "status": "CONTRIBUTOR_READY", "priority": "P1"}
+  ],
+  "truth": "SEED_REGISTRY_ONLY_NOT_YET_PROJECT_ITEMS"
+}

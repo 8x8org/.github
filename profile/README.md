@@ -9,11 +9,31 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/8x8org/8x8-user-edition">User Edition</a> ·
-  <a href="https://github.com/8x8org/8x8-protocol">Protocol</a> ·
-  <a href="https://github.com/8x8org/.github/blob/main/docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md">Total Estate Census</a> ·
-  <a href="https://github.com/8x8org/.github/blob/main/docs/8X8_VERSION_AND_THREE_REALITY_POLICY_0.0.1.md">Version & Reality Policy</a>
+  <a href="https://github.com/8x8org/8x8-user-edition"><strong>Explore User Edition</strong></a> ·
+  <a href="https://github.com/8x8org/8x8-protocol"><strong>Review the Protocol</strong></a> ·
+  <a href="https://github.com/orgs/8x8org/projects/1"><strong>Public Program</strong></a> ·
+  <a href="https://github.com/8x8org/8x8-user-edition/discussions"><strong>Join Discussions</strong></a>
 </p>
+
+> **Current public focus:** converge the complete estate, ship verifiable 0.0.1 Beta release units, improve the public experience, and create real contributor pathways without exposing the private control plane.
+
+## Start here
+
+| Path | Best for | Current state |
+|---|---|---|
+| [User Edition](https://github.com/8x8org/8x8-user-edition) | Exploring the public-safe client, cockpit, Art Board, and beta experience | Public Present · 0.0.1 Beta |
+| [Protocol](https://github.com/8x8org/8x8-protocol) | Reviewing identity, permission, evidence, coordination, and compatibility contracts | Protected Beta / review |
+| [Public Program](https://github.com/orgs/8x8org/projects/1) | Following roadmap, release units, contributor tasks, and blocked gates | Requires active population |
+| [Discussions](https://github.com/8x8org/8x8-user-edition/discussions) | Questions, ideas, architecture feedback, showcases, and introductions | Community activation underway |
+| [MSG238 activation plan](https://github.com/8x8org/.github/blob/main/docs/MSG238_PUBLIC_GROWTH_AND_COMMUNITY_ACTIVATION_0.0.1.md) | Public growth, promotion, discussions, contributors, and GitHub modernization | Designed · execution in progress |
+
+## What makes 8x8 different
+
+8x8 is designed around a verifiable chain:
+
+`Owner intent → policy → shared context → authority lease → mission → agent/body identity → execution → tests → receipt → public claim`
+
+The goal is not merely autonomous output. The goal is **legible, bounded, reversible, evidence-backed autonomy**.
 
 ## One system across Past, Present and Future
 
@@ -27,6 +47,18 @@ Past, Present and Future are native operating realities inside 8x8, not marketin
 | **Protected Beta** | Promotion state between Future Lab and Public Present, not a fourth reality |
 
 Every repository, mission, agent, body, service, connector, model, deployment, asset and public claim should declare its reality and evidence state.
+
+## Product family
+
+| Surface | Purpose | Public truth |
+|---|---|---|
+| **User Edition** | Public-safe client and product experience | Beta, evidence-gated |
+| **8x8 Protocol** | Permission, identity, receipts, coordination, and compatibility | Reference implementation under review |
+| **Truth Console** | Read-only view of missions, leases, freshness, contradictions, and rollback | Public-safe reference; live private feed not connected |
+| **Studio** | Visual, media, documentation, and demonstration system | Mixed Public Present and Future Lab |
+| **Academy** | Guides, examples, exercises, and contributor education | Planned and partially documented |
+| **Blockchain & Testnet Lab** | Protocol, provenance, governance, and economic experiments | Testnet/research only; no live financial authority |
+| **Future Lab** | Spatial, post-quantum, frontier agent, and advanced interface research | Not public production |
 
 ## The complete 8x8 estate
 
@@ -45,21 +77,45 @@ GitHub is only one projection. The full system spans twelve constitutional domai
 11. venture, contribution value, testnet and crypto research;
 12. repositories, connectors, Academy, plugins and community ecosystem.
 
-The canonical census scope and manifest schema are maintained in:
+Canonical references:
 
-- [`docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md`](../docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md)
-- [`schemas/8x8-estate-manifest-0.0.1.json`](../schemas/8x8-estate-manifest-0.0.1.json)
-- [`registry/8x8-connected-repositories-0.0.1.json`](../registry/8x8-connected-repositories-0.0.1.json)
+- [`Total Estate Census`](../docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md)
+- [`Estate Manifest Schema`](../schemas/8x8-estate-manifest-0.0.1.json)
+- [`Connected Repository Registry`](../registry/8x8-connected-repositories-0.0.1.json)
+- [`MSG237 Convergence Program`](https://github.com/8x8org/.github/issues/5)
+- [`MSG238 Public Activation`](../docs/MSG238_PUBLIC_GROWTH_AND_COMMUNITY_ACTIVATION_0.0.1.md)
 
 ## Public repositories
 
 | Repository | Public role | Current truth |
 |---|---|---|
 | [`8x8-user-edition`](https://github.com/8x8org/8x8-user-edition) | Public-safe client, cockpit and Art Board | 0.0.1 beta; evidence-gated; no private control access |
-| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Public permission, identity, evidence and compatibility contracts | 0.0.1 beta contracts under review |
+| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Public permission, identity, evidence and compatibility contracts | 0.0.1 beta contracts and reference kernel under review |
 | [`.github`](https://github.com/8x8org/.github) | Organization governance, census, public projection and contribution rules | Public documentation and policy |
 
-Other public repositories under the owner account remain part of the broader connected estate and are classified in the repository registry. Additional components may enter the Public Present only after security, privacy, license, provenance, accessibility, evidence and rollback review.
+Other repositories remain part of the broader connected estate and require explicit role, maturity, security, provenance, and public-boundary review before promotion.
+
+## Contribute to 0.0.1 Beta
+
+Useful contributions include:
+
+- deterministic tests and fixtures;
+- accessibility and mobile review;
+- documentation and examples;
+- architecture diagrams;
+- privacy and security review;
+- protocol schemas and validators;
+- public-safe plugins and adapters;
+- translations;
+- issue triage and reproducible bug reports;
+- Studio visuals with provenance and licensing.
+
+Start with:
+
+- [`CONTRIBUTING.md`](../CONTRIBUTING.md)
+- [Open issues](https://github.com/8x8org/8x8-user-edition/issues)
+- [Discussions](https://github.com/8x8org/8x8-user-edition/discussions)
+- [Public Program](https://github.com/orgs/8x8org/projects/1)
 
 ## Evidence before claims
 
@@ -81,20 +137,19 @@ This organization does not publish or grant:
 
 Public clients are isolated consumers of approved public capabilities. They are not downloadable copies of the owner system.
 
-## Product direction
+## Community and promotion
 
-Public-safe release units may include browser and installable clients, mobile shells, CLI and SDK tools, permissioned connectors, public APIs, privacy-preserving maps, worlds, Studio surfaces, Academy content and community-created 8x8-compatible plugins.
+The public program should maintain a visible rhythm of:
 
-A listed direction is not automatically implemented, deployed or publicly released. Exact status belongs in the estate manifest and evidence receipts.
+- weekly build notes;
+- contributor-ready tasks;
+- architecture and roadmap discussions;
+- monthly beta demonstrations;
+- release notes and known limitations;
+- public-safe screenshots, diagrams, and demo clips;
+- evidence-backed announcements and outreach.
 
-## Contributing
-
-Contributions are welcome in code, tests, documentation, accessibility, design, security review, protocol contracts, schemas and public-safe plugins.
-
-- Read [`CONTRIBUTING.md`](../CONTRIBUTING.md).
-- Follow [`CODE_OF_CONDUCT.md`](../CODE_OF_CONDUCT.md).
-- Report security concerns through [`SECURITY.md`](../SECURITY.md).
-- Never publish credentials, wallet material, personal identifiers, precise user locations or private-system topology.
+Promotion must describe what is actually verified, not what exists only in the Future Lab. Ambition is useful. False deployment claims are merely ambition wearing a fake mustache.
 
 ## Governance
 

@@ -1,147 +1,224 @@
-# 8x8 OS
+<div align="center">
 
-<p align="center">
-  <strong>Evidence-governed operating system for human and AI organizations.</strong>
-</p>
+# ♾️×♾️ ©️8x8 by FlashTM8 ⚡️🌎🤖
 
-<p align="center">
-  <strong>Product version 0.0.1 · Beta · Not fully stable · Not whole-system complete</strong>
-</p>
+### One Fabric for evidence-governed human + AI systems
 
-<p align="center">
-  <a href="https://github.com/8x8org/8x8-user-edition"><strong>Explore User Edition</strong></a> ·
-  <a href="https://8x8-os-ecosystem.vercel.app"><strong>Open Public Fabric</strong></a> ·
-  <a href="https://github.com/8x8org/8x8-protocol"><strong>Review the Protocol</strong></a> ·
-  <a href="https://github.com/orgs/8x8org/projects/1"><strong>Public Program</strong></a>
-</p>
+**Past preserved · Present proven · Future gated**
 
-> **Current public focus:** converge the complete estate, ship verifiable 0.0.1 Beta release units, improve the public experience, and create real contributor pathways without exposing the private control plane.
+[![Status](https://img.shields.io/badge/status-0.0.1%20Beta-2563eb?style=for-the-badge)](https://github.com/8x8org/8x8-user-edition)
+[![One Fabric](https://img.shields.io/badge/root-fabric%3A%2F%2F8x8%2Fcore-111827?style=for-the-badge)](https://github.com/8x8org/.github)
+[![Protocol](https://img.shields.io/badge/protocol-evidence--gated-7c3aed?style=for-the-badge)](https://github.com/8x8org/8x8-protocol)
+[![Security](https://img.shields.io/badge/security-permission--first-059669?style=for-the-badge)](../SECURITY.md)
 
-## Start here
+[**Open Public Fabric**](https://8x8-os-ecosystem.vercel.app) · [**Explore User Edition**](https://github.com/8x8org/8x8-user-edition) · [**Review Protocol**](https://github.com/8x8org/8x8-protocol) · [**Public Program**](https://github.com/orgs/8x8org/projects/1)
 
-| Path | Best for | Current state |
+</div>
+
+---
+
+## One system. One root. Verifiable autonomy.
+
+8x8 is an evidence-governed operating architecture for coordinating humans, agents, models, tools, devices, workflows, memory and public experiences without collapsing authority, history or proof into a black box.
+
+The canonical public architecture resolves under one root:
+
+```text
+fabric://8x8/core
+```
+
+The core execution chain is deliberately legible:
+
+```mermaid
+flowchart LR
+    O[Owner intent] --> P[Policy]
+    P --> C[Shared context]
+    C --> L[Authority lease]
+    L --> M[Mission]
+    M --> A[Agent / body identity]
+    A --> R[Router + models + tools]
+    R --> X[Execution]
+    X --> T[Tests]
+    T --> E[Receipt + provenance]
+    E --> Q[Public claim / promotion gate]
+```
+
+The objective is not merely autonomous output. The objective is **bounded, reversible, inspectable, evidence-backed autonomy**.
+
+---
+
+## The three realities
+
+| Reality | Operating meaning | Promotion law |
 |---|---|---|
-| [Live Public Fabric](https://8x8-os-ecosystem.vercel.app) | Exploring the currently served public-safe Fabric Mirror | Server-side READY · physical multi-client certification still incomplete |
-| [User Edition](https://github.com/8x8org/8x8-user-edition) | Canonical public source, cockpit, First Blink, Reality Graph and Art Board | Public Present · 0.0.1 Beta |
-| [Protocol](https://github.com/8x8org/8x8-protocol) | Reviewing identity, permission, evidence, coordination, and compatibility contracts | Protected Beta / review |
-| [Current Fabric System Map](../docs/8X8_OS_0.0.1_FABRIC_SYSTEM_MAP.md) | Understanding the complete five-fabric / fifteen-capability architecture | Current public-safe definition |
-| [Public Program](https://github.com/orgs/8x8org/projects/1) | Following roadmap, release units, contributor tasks, and blocked gates | Requires active population |
-| [Discussions](https://github.com/8x8org/8x8-user-edition/discussions) | Questions, ideas, architecture feedback, showcases, and introductions | Community activation underway |
+| **PAST_PRESERVED** | Historical releases, dormant capabilities, evidence, experiments and rollback material are retained with provenance. | Never erase history merely because newer work exists. |
+| **PRESENT_PROVEN** | Current claims require reproducible evidence for the exact object/revision being described. | Proof outranks prose. |
+| **FUTURE_GATED** | Research, candidates, simulations and integrations remain explicitly unpromoted until their gates pass. | Newer is not automatically canonical. |
 
-## What makes 8x8 different
+This separation is foundational to One Fabric. A screenshot is not a deployment receipt. A registered agent is not automatically productive. A branch is not a release. A design is not owner-accepted merely because it renders.
 
-8x8 is designed around a verifiable chain:
+---
 
-`Owner intent → policy → shared context → authority lease → mission → agent/body identity → execution → tests → receipt → public claim`
+## The One Fabric architecture
 
-The goal is not merely autonomous output. The goal is **legible, bounded, reversible, evidence-backed autonomy**.
+```text
+                           ©️8x8 by FlashTM8 ⚡️🌎🤖
+                                      │
+                             fabric://8x8/core
+                                      │
+        ┌─────────────────────────────┼─────────────────────────────┐
+        │                             │                             │
+  Sovereign Fabric             Intelligence Fabric          Continuity Fabric
+ owner · identity              agents · councils            memory · messages
+ permissions · leases          models · routing             context · evidence
+ devices · rollback            research · evaluation        provenance · recovery
+        │                             │                             │
+        └──────────────────────┬──────┴───────────────┬─────────────┘
+                               │                      │
+                        Execution Fabric        Experience Fabric
+                        missions · services      web · mobile · voice
+                        bots · schedulers        spatial · Studio
+                        CI · deployments         graphs · operator UX
+                               │                      │
+                               └──────────┬───────────┘
+                                          │
+                              Tests → Receipts → Promotion
+```
 
-## Five nested fabrics
+### Five cooperating fabrics
 
-The wider system is better understood as five cooperating fabrics:
-
-1. **Sovereign Fabric** — owner identity, permissions, devices, leases, emergency control, private state and rollback.
-2. **Intelligence Fabric** — Hermes, agents, councils, models, provider routing, research, teaching and evaluation.
-3. **Continuity Fabric** — memory, messages, context snapshots, ledgers, evidence indexes, recovery and historical provenance.
-4. **Execution Fabric** — Termux, Ubuntu PRoot, services, bots, missions, schedulers, GitHub Actions, Replit and deployments.
-5. **Experience Fabric** — First Blink, Live Reality Graph, World, Art Board 360, Command Deck, Council Wall, Memory Graph, Operator HUD, Studio, voice and spatial interfaces.
-
-These fabrics contain at least fifteen capability families spanning agent identity, multi-agent coordination, model routing, memory, automation, evidence, security, hardware, connectors, Studio/media, trading research, blockchain/testnet research, public spatial UX, release operations, and business/governance/Academy systems.
-
-See the [current Fabric System Map](../docs/8X8_OS_0.0.1_FABRIC_SYSTEM_MAP.md).
-
-## One system across Past, Present and Future
-
-Past, Present and Future are native operating realities inside 8x8, not marketing language.
-
-| Reality | Meaning |
+| Fabric | Responsibility |
 |---|---|
-| **Private Past** | Sovereign runtime history, private agents, memory, evidence, services, recovery state and superseded work |
-| **Public Present** | Privacy-safe, evidence-backed public projection of the current 0.0.1 beta |
-| **Future Lab** | Research, designs, simulations, candidate capabilities and unpromoted prototypes |
-| **Protected Beta** | Promotion state between Future Lab and Public Present, not a fourth reality |
+| **Sovereign** | Owner authority, identity, permissions, devices, leases, emergency control and rollback. |
+| **Intelligence** | Agents, councils, model/provider routing, research, teaching and evaluation. |
+| **Continuity** | Memory, messages, context, contradiction tracking, provenance, evidence indexes and recovery. |
+| **Execution** | Missions, runtimes, services, bots, schedulers, CI, deployment and operational receipts. |
+| **Experience** | Public/user clients, graphs, Studio, command decks, mobile cockpit, voice and spatial interfaces. |
 
-Every repository, mission, agent, body, service, connector, model, deployment, asset and public claim should declare its reality and evidence state.
+---
 
-## Product family
+## What makes 8x8 structurally different
 
-| Surface | Purpose | Public truth |
+### Evidence is part of the runtime contract
+
+Claims move through an explicit evidence ladder:
+
+```text
+CLAIMED
+  ↓
+DESIGNED
+  ↓
+IMPLEMENTED
+  ↓
+TESTED
+  ↓
+VERIFIED
+  ↓
+RUNNING
+  ↓
+DEPLOYED
+  ↓
+PUBLICLY_RELEASED
+  ↓
+ADOPTED
+```
+
+A claim can move backward when evidence becomes stale. `100/100` is valid only for an explicit denominator, exact scope and timestamp.
+
+### History is an asset, not clutter
+
+Old code, designs, releases and dormant capabilities are preserved, deduplicated and reconciled before revival. The convergence path is:
+
+```text
+DISCOVER → INVENTORY → HASH → PROVENANCE → CLASSIFY
+→ EXTRACT CAPABILITY → DEDUPLICATE → RECONCILE
+→ ASSIGN OWNER → IMPLEMENT REVERSIBLY → TEST → VERIFY
+→ RELEASE GATE → DEPLOY → RECEIPT → PROMOTE
+```
+
+### Third-party systems are adapters, not new roots
+
+External frameworks, graph systems, model gateways, observability stacks and agent frameworks may contribute powerful capabilities. They enter through bounded adapters and evidence gates; they do not silently replace One Fabric identity, mission, authority, receipt or rollback semantics.
+
+---
+
+## Public product surfaces
+
+| Surface | Purpose | Current public truth |
 |---|---|---|
-| **User Edition** | Canonical public-safe client and product experience | 0.0.1 Beta, evidence-gated |
-| **Live Reality Graph / Fabric Mirror** | Public-safe projection of systems, evidence, worlds and capability state | Server-side deployed; not a live private-runtime feed |
-| **8x8 Protocol** | Permission, identity, receipts, coordination, and compatibility | Reference implementation under review |
-| **Truth Console / Proof Graph** | Read-only view of missions, leases, freshness, contradictions and rollback | Architecture priority; live unified truth service not yet complete |
-| **Studio** | Visual, media, documentation, voice and demonstration system | Mixed Public Present and Future Lab |
-| **Academy / Creator Forge** | Guides, examples, contribution and creation workflows | Planned and partially documented |
-| **Blockchain & Testnet Lab** | Protocol, provenance, governance and economic experiments | Testnet/research only; no live financial authority |
-| **Future Lab** | Spatial, frontier agent, advanced interface and research candidates | Not public production |
+| [**User Edition**](https://github.com/8x8org/8x8-user-edition) | Canonical public-safe client and product source | `0.0.1 Beta` · evidence-gated |
+| [**Live Public Fabric**](https://8x8-os-ecosystem.vercel.app) | Public-safe projection of approved surfaces | Reachable public carrier; not the private control plane |
+| [**8x8 Protocol**](https://github.com/8x8org/8x8-protocol) | Identity, permission, evidence and compatibility contracts | Protected beta / review |
+| **Truth Console / Proof Graph** | Read-only mission, lease, contradiction and receipt inspection | Architecture priority; unified live truth service not yet complete |
+| **Studio** | Visual, media, voice, documentation and demonstration system | Mixed Present + Future Lab |
+| **Academy / Creator Forge** | Guides, examples, contribution and creation workflows | Planned + partially documented |
+| **Blockchain & Testnet Lab** | Provenance, governance and economic experiments | Research/testnet only; no implied financial authority |
 
-## Current deployment truth
-
-The canonical public source is [`8x8org/8x8-user-edition`](https://github.com/8x8org/8x8-user-edition).
-
-The current public production carrier is [`8x8-os-ecosystem.vercel.app`](https://8x8-os-ecosystem.vercel.app). The Vercel project name is historical and does **not** replace canonical GitHub source authority.
-
-Server-side checks have verified browser-renderable HTML on `/`, `/first-blink`, `/world` and `/art-board` with restrictive security headers. Physical logged-out Android Chromium and mobile Safari visual smoke remain separate certification gates. A READY deployment is not evidence of whole-system completion.
-
-## The complete 8x8 estate
-
-GitHub is only one projection. The full system spans twelve constitutional domains:
-
-1. sovereignty and owner control;
-2. local and cloud runtime;
-3. Hermes coordination and councils;
-4. models, providers and intelligence;
-5. memory, messages and continuity;
-6. evidence, tests, receipts and rollback;
-7. security, identity and permissions;
-8. reality promotion and demotion;
-9. terminal, mobile, web, voice and spatial experience;
-10. Studio, media and visual provenance;
-11. venture, contribution value, testnet and crypto research;
-12. repositories, connectors, Academy, plugins and community ecosystem.
-
-Canonical references:
-
-- [`Current Fabric System Map`](../docs/8X8_OS_0.0.1_FABRIC_SYSTEM_MAP.md)
-- [`Total Estate Census`](../docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md)
-- [`Estate Manifest Schema`](../schemas/8x8-estate-manifest-0.0.1.json)
-- [`Connected Repository Registry`](../registry/8x8-connected-repositories-0.0.1.json)
-- [`MSG237 Convergence Program`](https://github.com/8x8org/.github/issues/5)
-- [`MSG238 Public Activation`](../docs/MSG238_PUBLIC_GROWTH_AND_COMMUNITY_ACTIVATION_0.0.1.md)
+---
 
 ## Public repositories
 
-| Repository | Public role | Current truth |
-|---|---|---|
-| [`8x8-user-edition`](https://github.com/8x8org/8x8-user-edition) | Public-safe client, cockpit, First Blink, Reality Graph and Art Board | 0.0.1 beta; evidence-gated; no private control access |
-| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Public permission, identity, evidence and compatibility contracts | 0.0.1 beta contracts and reference kernel under review |
-| [`.github`](https://github.com/8x8org/.github) | Organization governance, census, public projection and contribution rules | Public documentation and policy |
+| Repository | Role |
+|---|---|
+| [`8x8-user-edition`](https://github.com/8x8org/8x8-user-edition) | Public-safe product/client surface, cockpit and evidence-oriented experience. |
+| [`8x8-protocol`](https://github.com/8x8org/8x8-protocol) | Public permission, identity, receipt and compatibility contracts. |
+| [`.github`](https://github.com/8x8org/.github) | Organization governance, public standards, estate projection, receipts and contribution pathways. |
 
-Other repositories remain part of the broader connected estate and require explicit role, maturity, security, provenance, and public-boundary review before promotion.
+Other connected repositories remain part of the broader One Fabric estate and require role, maturity, security, provenance and public-boundary review before public promotion.
 
-## Contribute to 0.0.1 Beta
+---
 
-Useful contributions include deterministic tests and fixtures, accessibility and mobile review, documentation and examples, architecture diagrams, privacy and security review, protocol schemas and validators, public-safe plugins and adapters, translations, issue triage, reproducible bug reports and Studio visuals with provenance and licensing.
+## Architecture + research direction
 
-Start with [`CONTRIBUTING.md`](../CONTRIBUTING.md), [open issues](https://github.com/8x8org/8x8-user-edition/issues), [Discussions](https://github.com/8x8org/8x8-user-edition/discussions), and the [Public Program](https://github.com/orgs/8x8org/projects/1).
+8x8 is deliberately built to absorb useful ideas without losing canonical ownership. Current research families include:
 
-## Evidence before claims
+- **context and knowledge graphs** — structured shared memory, temporal state, contradiction detection and provenance;
+- **decision intelligence** — first-class decision records, causal context and replayable reasoning evidence;
+- **agent orchestration** — identity, mission DAGs, leases, bounded authority and council coordination;
+- **universal model routing** — provider/model selection under policy, cost, capability and evidence constraints;
+- **multimodal + embodied interfaces** — web, mobile, voice, camera, sensors, 2D/3D/spatial and device nodes;
+- **evidence systems** — hashes, receipts, exact-head CI, rollback, deployment truth and public/private boundary enforcement;
+- **Studio + visual systems** — high-density command decks, proof graphs, world/mission/memory surfaces and media pipelines;
+- **security + cryptographic research** — least privilege, identity, secrets boundaries, provenance and defensive validation.
 
-The public evidence ladder is:
+The design target is not visual spectacle detached from reality. It is **high information density with evidence-linked interaction**, deliberate desktop-to-mobile collapse, strong accessibility/performance and strict separation of live telemetry from decorative or simulated instrumentation.
 
-`CLAIMED → DESIGNED → IMPLEMENTED → TESTED → VERIFIED → RUNNING → DEPLOYED → PUBLICLY_RELEASED → ADOPTED`
+---
 
-A README, screenshot, issue, commit or design does not by itself prove deployment or stability. No public surface should claim that 8x8 is `1.0`, stable, 100/100, fully complete or universally deployed while the system remains 0.0.1 beta.
+## Start here
 
-`100/100` is valid only for a declared release or audit scope at an exact timestamp. A continuously evolving Fabric can lose evidence freshness after a change and regain 100/100 only when the affected scope is re-verified.
+| Path | Best for |
+|---|---|
+| [**Live Public Fabric**](https://8x8-os-ecosystem.vercel.app) | See the currently served public-safe experience. |
+| [**User Edition**](https://github.com/8x8org/8x8-user-edition) | Inspect canonical public source and product work. |
+| [**Protocol**](https://github.com/8x8org/8x8-protocol) | Review permission, identity, evidence and compatibility contracts. |
+| [**Fabric System Map**](../docs/8X8_OS_0.0.1_FABRIC_SYSTEM_MAP.md) | Understand the current public architecture. |
+| [**Total Estate Census**](../docs/8X8_TOTAL_ESTATE_CENSUS_0.0.1.md) | Inspect known estate scope and evidence boundaries. |
+| [**Public Program**](https://github.com/orgs/8x8org/projects/1) | Follow competition, release and contribution work. |
+| [**Discussions**](https://github.com/8x8org/8x8-user-edition/discussions) | Ask questions, challenge architecture and collaborate. |
 
-## Public/private boundary
+---
 
-This organization does not publish or grant owner credentials, signing keys or private wallets; private repositories, messages, memory, prompts or raw telemetry; privileged device, shell, service or database access; unrestricted autonomous financial authority; or the private 8x8 control plane.
+## Contribute where proof matters
 
-Public clients are isolated consumers of approved public capabilities. They are not downloadable copies of the owner system.
+High-value contributions include deterministic tests and fixtures, accessibility/mobile review, architecture diagrams, privacy/security review, protocol schemas and validators, public-safe adapters, translations, reproducible benchmark harnesses, issue triage, bug reproduction, and Studio visuals with source/provenance/licensing.
 
-## Governance
+Start with [`CONTRIBUTING.md`](../CONTRIBUTING.md), [`SECURITY.md`](../SECURITY.md), the [open issues](https://github.com/8x8org/8x8-user-edition/issues), [Discussions](https://github.com/8x8org/8x8-user-edition/discussions), and the [Public Program](https://github.com/orgs/8x8org/projects/1).
 
-8x8 development is owner-sovereign, permission-first and evidence-gated. Public collaboration grants no private owner authority, financial authority or access to the private control plane. See [`GOVERNANCE.md`](../GOVERNANCE.md).
+---
+
+## Public / private boundary
+
+The public organization does **not** publish owner credentials, signing keys or private wallets; raw private prompts/messages/memory; unrestricted device or shell control; private runtime databases; hidden control-plane topology; or autonomous financial authority.
+
+Public clients consume approved capabilities. They are not downloadable replicas of the owner's private system.
+
+---
+
+<div align="center">
+
+### Build the future without falsifying the present.
+
+**©️8x8 by FlashTM8 ⚡️🌎🤖 · One Fabric · Evidence before claims · Rollback before irreversibility**
+
+</div>

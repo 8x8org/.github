@@ -38,8 +38,35 @@ gh api graphql \
   -f query='mutation($projectId:ID!){updateProjectV2(input:{projectId:$projectId,public:true}){projectV2{id title public url}}}' \
   -F projectId="$PROJECT_ID" >/tmp/8x8-project-public.json
 
+# Resolve current project items before adding anything. This makes retries safe after
+# a partial prior run: already-attached competition issues are preserved and skipped.
+CURRENT_ITEMS_JSON="$(gh api graphql \
+  -f query='query($org:String!,$number:Int!){organization(login:$org){projectV2(number:$number){items(first:100){nodes{id content{... on Issue{number title url repository{nameWithOwner}}}}}}}}' \
+  -F org="$ORG" -F number="$PROJECT_NUMBER")"
+
 ADDED_JSON='[]'
 for n in "${ISSUES[@]}"; do
+  EXISTING_ITEM_ID="$(jq -r --argjson n "$n" --arg repo "$ISSUE_REPO" '
+    [.data.organization.projectV2.items.nodes[]
+      | select(.content.repository.nameWithOwner == $repo and .content.number == $n)
+      | .id][0] // empty
+  ' <<<"$CURRENT_ITEMS_JSON")"
+
+  if [[ -n "$EXISTING_ITEM_ID" ]]; then
+    TITLE="$(jq -r --argjson n "$n" --arg repo "$ISSUE_REPO" '
+      [.data.organization.projectV2.items.nodes[]
+        | select(.content.repository.nameWithOwner == $repo and .content.number == $n)
+        | .content.title][0] // empty
+    ' <<<"$CURRENT_ITEMS_JSON")"
+    URL="$(jq -r --argjson n "$n" --arg repo "$ISSUE_REPO" '
+      [.data.organization.projectV2.items.nodes[]
+        | select(.content.repository.nameWithOwner == $repo and .content.number == $n)
+        | .content.url][0] // empty
+    ' <<<"$CURRENT_ITEMS_JSON")"
+    ADDED_JSON="$(jq -c --argjson n "$n" --arg title "$TITLE" --arg url "$URL" --arg item_id "$EXISTING_ITEM_ID" '. + [{issue:$n,title:$title,url:$url,item_id:$item_id,action:"PRESERVED_EXISTING"}]' <<<"$ADDED_JSON")"
+    continue
+  fi
+
   ISSUE_JSON="$(gh api "repos/${ISSUE_REPO}/issues/${n}")"
   CONTENT_ID="$(jq -r '.node_id // empty' <<<"$ISSUE_JSON")"
   TITLE="$(jq -r '.title // empty' <<<"$ISSUE_JSON")"
@@ -51,7 +78,7 @@ for n in "${ISSUES[@]}"; do
     -F projectId="$PROJECT_ID" -F contentId="$CONTENT_ID")"
   ITEM_ID="$(jq -r '.data.addProjectV2ItemById.item.id // empty' <<<"$ITEM_JSON")"
   [[ -n "$ITEM_ID" ]] || { echo "ERROR: project item add failed for issue #$n" >&2; exit 7; }
-  ADDED_JSON="$(jq -c --argjson n "$n" --arg title "$TITLE" --arg url "$URL" --arg item_id "$ITEM_ID" '. + [{issue:$n,title:$title,url:$url,item_id:$item_id}]' <<<"$ADDED_JSON")"
+  ADDED_JSON="$(jq -c --argjson n "$n" --arg title "$TITLE" --arg url "$URL" --arg item_id "$ITEM_ID" '. + [{issue:$n,title:$title,url:$url,item_id:$item_id,action:"ADDED"}]' <<<"$ADDED_JSON")"
 done
 
 VERIFY_JSON="$(gh api graphql \
@@ -80,7 +107,7 @@ jq -n \
   --arg project_url "$PROJECT_URL" \
   --argjson public true \
   --argjson items "$ADDED_JSON" \
-  '{schema_version:"1.0",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,public:$public,items:$items,status:"PASS"}' \
+  '{schema_version:"1.1",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,public:$public,items:$items,status:"PASS"}' \
   | tee /tmp/8x8-public-program-project-v2-receipt.json
 
 echo "PASS: Project #$PROJECT_NUMBER is public and issues 9-13 are attached."

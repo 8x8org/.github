@@ -81,22 +81,47 @@ for n in "${ISSUES[@]}"; do
   ADDED_JSON="$(jq -c --argjson n "$n" --arg title "$TITLE" --arg url "$URL" --arg item_id "$ITEM_ID" '. + [{issue:$n,title:$title,url:$url,item_id:$item_id,action:"ADDED"}]' <<<"$ADDED_JSON")"
 done
 
-VERIFY_JSON="$(gh api graphql \
-  -f query='query($org:String!,$number:Int!){organization(login:$org){projectV2(number:$number){id title public url items(first:100){nodes{content{... on Issue{number title url repository{nameWithOwner}}}}}}}}' \
-  -F org="$ORG" -F number="$PROJECT_NUMBER")"
+# GitHub Projects v2 can be eventually consistent immediately after item mutations.
+# Verify with bounded retry/backoff and retain the final raw snapshot for diagnostics.
+VERIFY_JSON=''
+VERIFY_OK=false
+MISSING_JSON='[]'
+DELAYS=(0 1 2 3 5 8 13 21)
+for idx in "${!DELAYS[@]}"; do
+  delay="${DELAYS[$idx]}"
+  if (( delay > 0 )); then
+    sleep "$delay"
+  fi
 
-PUBLIC="$(jq -r '.data.organization.projectV2.public' <<<"$VERIFY_JSON")"
-[[ "$PUBLIC" == "true" ]] || { echo "ERROR: project did not verify public after mutation" >&2; exit 8; }
+  VERIFY_JSON="$(gh api graphql \
+    -f query='query($org:String!,$number:Int!){organization(login:$org){projectV2(number:$number){id title public url items(first:100){nodes{content{... on Issue{number title url repository{nameWithOwner}}}}}}}}' \
+    -F org="$ORG" -F number="$PROJECT_NUMBER")"
+  printf '%s\n' "$VERIFY_JSON" >/tmp/8x8-project-verify-last.json
 
-for n in "${ISSUES[@]}"; do
-  jq -e --argjson n "$n" --arg repo "$ISSUE_REPO" '
-    [.data.organization.projectV2.items.nodes[].content
-      | select(.repository.nameWithOwner == $repo and .number == $n)] | length > 0
-  ' <<<"$VERIFY_JSON" >/dev/null || {
-    echo "ERROR: issue #$n is not visible in Project #$PROJECT_NUMBER after mutation" >&2
-    exit 9
-  }
+  PUBLIC="$(jq -r '.data.organization.projectV2.public // false' <<<"$VERIFY_JSON")"
+  MISSING_JSON='[]'
+  for n in "${ISSUES[@]}"; do
+    if ! jq -e --argjson n "$n" --arg repo "$ISSUE_REPO" '
+      [.data.organization.projectV2.items.nodes[].content
+        | select(.repository.nameWithOwner == $repo and .number == $n)] | length > 0
+    ' <<<"$VERIFY_JSON" >/dev/null; then
+      MISSING_JSON="$(jq -c --argjson n "$n" '. + [$n]' <<<"$MISSING_JSON")"
+    fi
+  done
+
+  if [[ "$PUBLIC" == "true" && "$MISSING_JSON" == "[]" ]]; then
+    VERIFY_OK=true
+    break
+  fi
+
+  echo "VERIFY attempt $((idx+1))/${#DELAYS[@]}: public=$PUBLIC missing=$MISSING_JSON" >&2
 done
+
+if [[ "$VERIFY_OK" != "true" ]]; then
+  echo "ERROR: Project verification did not converge after bounded retries; public=$(jq -r '.data.organization.projectV2.public // false' <<<"$VERIFY_JSON") missing=$MISSING_JSON" >&2
+  echo "DIAGNOSTIC: /tmp/8x8-project-verify-last.json" >&2
+  exit 9
+fi
 
 TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 jq -n \
@@ -107,7 +132,7 @@ jq -n \
   --arg project_url "$PROJECT_URL" \
   --argjson public true \
   --argjson items "$ADDED_JSON" \
-  '{schema_version:"1.1",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,public:$public,items:$items,status:"PASS"}' \
+  '{schema_version:"1.2",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,public:$public,items:$items,status:"PASS"}' \
   | tee /tmp/8x8-public-program-project-v2-receipt.json
 
 echo "PASS: Project #$PROJECT_NUMBER is public and issues 9-13 are attached."

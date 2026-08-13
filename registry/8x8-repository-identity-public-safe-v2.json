@@ -1,0 +1,55 @@
+{
+  "schema": "8x8.repository-identity.public-safe.v2",
+  "canonical_root": "fabric://8x8/core",
+  "generated_for": "public GitHub identity alignment",
+  "rename_policy": "DEFER_PENDING_DEPENDENCY_RECONCILIATION",
+  "public_repositories": [
+    {
+      "repository":"8x8org/.github",
+      "canonical_role":"PUBLIC_ORGANIZATION_IDENTITY_GOVERNANCE_PROGRAM",
+      "desired_description":"©️8x8 by FlashTM8 ⚡️🌎🤖 — public One-Fabric identity, governance, evidence program, community and contribution policy.",
+      "rename_action":"KEEP"
+    },
+    {
+      "repository":"8x8org/8x8-user-edition",
+      "canonical_role":"CANONICAL_PUBLIC_SAFE_CLIENT",
+      "desired_description":"Canonical public-safe ©️8x8 by FlashTM8 ⚡️🌎🤖 client: One-Fabric interface, identity/permissions, evidence and community projection.",
+      "rename_action":"KEEP"
+    },
+    {
+      "repository":"8x8org/8x8-protocol",
+      "canonical_role":"PUBLIC_PROTOCOL_CONTRACTS",
+      "desired_description":"Public 8x8 identity, capability, lease, receipt, evidence and compatibility contracts/reference kernel.",
+      "rename_action":"KEEP"
+    },
+    {
+      "repository":"horbolsi/8x8-OS-Ecosystem",
+      "canonical_role":"HISTORICAL_PUBLIC_CARRIER_AND_ECOSYSTEM_PROJECTION",
+      "desired_description":"Historical/public carrier projection for ©️8x8 by FlashTM8 ⚡️🌎🤖; canonical public source authority is 8x8org/8x8-user-edition.",
+      "rename_action":"DEFER_CARRIER_AND_LINK_COMPATIBILITY"
+    },
+    {
+      "repository":"horbolsi/8x8-os-a-z",
+      "canonical_role":"HISTORICAL_PUBLIC_PRESENTATION_AND_STUDIO_EVIDENCE",
+      "desired_description":"Historical 8x8 A–Z presentation/Studio evidence and public documentation; provenance donor, not current runtime authority.",
+      "rename_action":"DEFER_PENDING_DEPENDENCY_RECONCILIATION"
+    }
+  ],
+  "private_repository_policy": {
+    "count": 11,
+    "names": "REDACTED_FROM_PUBLIC_PLAN",
+    "detail_location": "private One-Fabric owner registries",
+    "normal_user_access": "DENY_DEFAULT"
+  },
+  "promotion_gate": {
+    "before_repository_rename": [
+      "dependency/import/reference census",
+      "GitHub Actions/package reference census",
+      "Vercel/Replit/cloud/deployment reference census",
+      "documentation/link redirect plan",
+      "rollback plan",
+      "owner-visible receipt"
+    ],
+    "before_description_claims_current_capability": ["fresh evidence", "explicit reality classification"]
+  }
+}

@@ -1,0 +1,80 @@
+name: Validate Public Identity Community Benchmark V1
+
+on:
+  pull_request:
+    paths:
+      - 'profile/README.md'
+      - 'docs/8X8_PUBLIC_COMPETITION_RACE_REGISTRY_0.0.1.md'
+      - 'docs/8X8_EVIDENCE_BENCHMARK_AND_RANK_PROGRAM_V1.md'
+      - 'docs/8X8_COMMUNITY_SOCIAL_REFERRAL_AND_PROJECT_GRAPH_V1.md'
+      - 'registry/8x8-repository-identity-and-description-plan-v1.json'
+      - 'registry/public-program-evidence-cards-v1.json'
+      - 'scripts/repair_public_program_project_v2.sh'
+      - '.github/workflows/validate-public-identity-community-benchmark-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON registries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          repo_plan = json.loads(Path('registry/8x8-repository-identity-and-description-plan-v1.json').read_text())
+          cards = json.loads(Path('registry/public-program-evidence-cards-v1.json').read_text())
+
+          assert repo_plan['schema'] == '8x8.repository-identity-plan.v1'
+          assert repo_plan['canonical_root'] == 'fabric://8x8/core'
+          repositories = repo_plan['repositories']
+          ids = [r['repository'] for r in repositories]
+          assert len(ids) == len(set(ids))
+          assert all(r['rename_action'] for r in repositories)
+          assert all(r['desired_description'] for r in repositories)
+
+          assert cards['schema'] == '8x8.public-program-evidence-cards.v1'
+          assert cards['canonical_root'] == 'fabric://8x8/core'
+          assert cards['organization'] == '8x8org'
+          assert cards['project_number'] == 1
+          issues = [c['issue'] for c in cards['cards']]
+          assert len(issues) == len(set(issues))
+          assert {9,10,11,12,13,24,25,26,27,28}.issubset(set(issues))
+          assert all(isinstance(c['desired_project_presence'], bool) for c in cards['cards'])
+          print(f'REPOSITORY_IDENTITY_PLAN=PASS repositories={len(repositories)}')
+          print(f'PUBLIC_PROGRAM_CARDS=PASS cards={len(issues)} unique={len(set(issues))}')
+          PY
+
+      - name: Validate Project-v2 repair script syntax and registry binding
+        run: |
+          bash -n scripts/repair_public_program_project_v2.sh
+          grep -F 'public-program-evidence-cards-v1.json' scripts/repair_public_program_project_v2.sh >/dev/null
+          grep -F 'schema_version:"1.4"' scripts/repair_public_program_project_v2.sh >/dev/null
+          echo 'PROJECT_REPAIR_STATIC_GATE=PASS'
+
+      - name: Validate public truth language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          profile = Path('profile/README.md').read_text()
+          benchmark = Path('docs/8X8_EVIDENCE_BENCHMARK_AND_RANK_PROGRAM_V1.md').read_text()
+          community = Path('docs/8X8_COMMUNITY_SOCIAL_REFERRAL_AND_PROJECT_GRAPH_V1.md').read_text()
+          competition = Path('docs/8X8_PUBLIC_COMPETITION_RACE_REGISTRY_0.0.1.md').read_text()
+
+          assert '©️8x8 by FlashTM8 ⚡️🌎🤖' in profile
+          assert 'fabric://8x8/core' in profile
+          assert 'ONE_INTERFACE_MULTI_AUTHORITY_PROJECTION' in profile
+          assert 'UNMEASURED_PENDING_DENOMINATOR' in benchmark
+          assert 'RUNTIME_FUTURE_GATED' in community
+          assert 'RESULT_UNVERIFIED' in competition
+          assert 'PROJECT_ATTACHMENT_PENDING' in competition
+          print('PUBLIC_TRUTH_LANGUAGE=PASS')
+          PY

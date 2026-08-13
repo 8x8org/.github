@@ -1,17 +1,31 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-ORG="8x8org"
-PROJECT_NUMBER=1
-EXPECTED_TITLE="8x8 OS Public Program"
-ISSUE_REPO="8x8org/.github"
-# Competition/race cards + benchmark/rank + community architecture.
-# Adding an issue here does not alter its truth state; the Project is a projection.
-ISSUES=(9 10 11 12 13 24 25 26 27 28)
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+REPO_ROOT="$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)"
+REGISTRY="${PUBLIC_PROGRAM_REGISTRY:-$REPO_ROOT/registry/public-program-evidence-cards-v1.json}"
 
 need() { command -v "$1" >/dev/null 2>&1 || { echo "ERROR: required command missing: $1" >&2; exit 2; }; }
 need gh
 need jq
+
+[[ -f "$REGISTRY" ]] || { echo "ERROR: public-program registry not found: $REGISTRY" >&2; exit 2; }
+jq -e '.schema == "8x8.public-program-evidence-cards.v1" and .canonical_root == "fabric://8x8/core"' "$REGISTRY" >/dev/null || {
+  echo "ERROR: unexpected public-program registry schema/root" >&2
+  exit 2
+}
+
+ORG="$(jq -r '.organization' "$REGISTRY")"
+PROJECT_NUMBER="$(jq -r '.project_number' "$REGISTRY")"
+EXPECTED_TITLE="$(jq -r '.project_title' "$REGISTRY")"
+ISSUE_REPO="$(jq -r '.issue_repository' "$REGISTRY")"
+mapfile -t ISSUES < <(jq -r '.cards[] | select(.desired_project_presence == true) | .issue' "$REGISTRY")
+
+[[ ${#ISSUES[@]} -gt 0 ]] || { echo "ERROR: registry contains no desired project cards" >&2; exit 2; }
+[[ "$(printf '%s\n' "${ISSUES[@]}" | sort -n | uniq -d | wc -l | tr -d ' ')" == "0" ]] || {
+  echo "ERROR: duplicate issue numbers in registry" >&2
+  exit 2
+}
 
 gh auth status >/dev/null 2>&1 || {
   echo "ERROR: gh is not authenticated. Authenticate an owner/admin account with GitHub Projects access, then rerun." >&2
@@ -40,8 +54,8 @@ gh api graphql \
   -f query='mutation($projectId:ID!){updateProjectV2(input:{projectId:$projectId,public:true}){projectV2{id title public url}}}' \
   -F projectId="$PROJECT_ID" >"${TMPDIR:-/tmp}/8x8-project-public.json"
 
-# Resolve current project items before adding anything. This makes retries safe after
-# a partial prior run: already-attached issues are preserved and skipped.
+# Resolve current project items before adding anything. Retries are idempotent:
+# already-attached issues are preserved and skipped.
 CURRENT_ITEMS_JSON="$(gh api graphql \
   -f query='query($org:String!,$number:Int!){organization(login:$org){projectV2(number:$number){items(first:100){nodes{id content{... on Issue{number title url repository{nameWithOwner}}}}}}}}' \
   -F org="$ORG" -F number="$PROJECT_NUMBER")"
@@ -133,10 +147,11 @@ jq -n \
   --arg project_id "$PROJECT_ID" \
   --arg project_title "$PROJECT_TITLE" \
   --arg project_url "$PROJECT_URL" \
+  --arg registry "$REGISTRY" \
   --argjson public true \
   --argjson items "$ADDED_JSON" \
-  '{schema_version:"1.3",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,public:$public,items:$items,status:"PASS"}' \
+  '{schema_version:"1.4",timestamp:$timestamp,organization:$org,project_id:$project_id,project_title:$project_title,project_url:$project_url,registry:$registry,public:$public,items:$items,status:"PASS"}' \
   | tee "$RECEIPT"
 
-echo "PASS: Project #$PROJECT_NUMBER is public and all configured evidence cards are attached."
+echo "PASS: Project #$PROJECT_NUMBER is public and all registry-configured evidence cards are attached."
 echo "RECEIPT=$RECEIPT"

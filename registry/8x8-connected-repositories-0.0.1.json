@@ -1,29 +1,19 @@
 {
   "product_version": "0.0.1",
   "maturity": "beta",
-  "generated_at": "2026-08-06T12:23:00Z",
-  "scope": "Repositories exposed by the current GitHub connection; not the complete 8x8 estate",
-  "repositories": [
-    {"repository":"8x8org/.github","visibility":"public","domain":"ECOSYSTEM","reality":"PUBLIC_PRESENT","canonical_role":"organization governance and public projection"},
-    {"repository":"8x8org/8x8-user-edition","visibility":"public","domain":"EXPERIENCE","reality":"PUBLIC_PRESENT","promotion_state":"PROTECTED_BETA","canonical_role":"public-safe user client"},
-    {"repository":"8x8org/8x8-protocol","visibility":"public","domain":"SECURITY","reality":"PUBLIC_PRESENT","promotion_state":"PROTECTED_BETA","canonical_role":"public protocol contracts"},
-    {"repository":"8x8org/8x8-venture-operator","visibility":"private","domain":"ECONOMY","reality":"PRIVATE_PAST","canonical_role":"venture and operator work"},
-    {"repository":"horbolsi/8x8","visibility":"private","domain":"RUNTIME","reality":"PRIVATE_PAST","canonical_role":"private implementation source; exact canonical status requires local reconciliation"},
-    {"repository":"horbolsi/8x8-blockchain","visibility":"private","domain":"ECONOMY","reality":"FUTURE_LAB","canonical_role":"testnet, blockchain and synthetic economic research"},
-    {"repository":"horbolsi/8x8-memory","visibility":"private","domain":"MEMORY","reality":"PRIVATE_PAST","canonical_role":"memory projection and continuity package"},
-    {"repository":"horbolsi/8x8-messages","visibility":"private","domain":"MEMORY","reality":"PRIVATE_PAST","canonical_role":"messages and coordination continuity package"},
-    {"repository":"horbolsi/8x8-os-private","visibility":"private","domain":"SECURITY","reality":"PRIVATE_PAST","canonical_role":"restricted implementation and governance"},
-    {"repository":"horbolsi/8x8-os-backup","visibility":"private","domain":"SOVEREIGNTY","reality":"PRIVATE_PAST","canonical_role":"backup projection; must not silently become canonical"},
-    {"repository":"horbolsi/8x8-os-hub","visibility":"private","domain":"ECOSYSTEM","reality":"PRIVATE_PAST","canonical_role":"private hub and integration metadata"},
-    {"repository":"horbolsi/8x8-os-june2026","visibility":"private","domain":"EVIDENCE","reality":"PRIVATE_PAST","canonical_role":"evidence, convergence and historical relay"},
-    {"repository":"horbolsi/8x8-OS-unified","visibility":"private","domain":"COORDINATION","reality":"FUTURE_LAB","canonical_role":"integration and migration lane"},
-    {"repository":"horbolsi/flash-hermes-sync-safe","visibility":"private","domain":"COORDINATION","reality":"PRIVATE_PAST","canonical_role":"Hermes synchronization, recovery and continuity"},
-    {"repository":"horbolsi/8x8-OS-Ecosystem","visibility":"public","domain":"ECOSYSTEM","reality":"PUBLIC_PRESENT","promotion_state":"PROTECTED_BETA","canonical_role":"public ecosystem and integration front door"},
-    {"repository":"horbolsi/8x8-os-a-z","visibility":"public","domain":"ECOSYSTEM","reality":"PUBLIC_PRESENT","promotion_state":"PROTECTED_BETA","canonical_role":"public educational and architecture companion"}
-  ],
+  "state": "PAST_PRESERVED_SUPERSEDED_CURRENT_VIEW",
+  "superseded_by": "registry/8x8-connected-repositories-public-safe-v2.json",
+  "canonical_root": "fabric://8x8/core",
+  "reason": "The prior public registry enumerated names of private repositories. Current public policy is deny-by-default for private topology. Historical Git history is preserved; current public projection is redacted.",
+  "public_truth": {
+    "connected_repository_total": 16,
+    "public_repository_total": 5,
+    "private_repository_total": 11,
+    "private_repository_names": "REDACTED_FROM_CURRENT_PUBLIC_PROJECTION"
+  },
   "limitations": [
-    "This registry does not include repositories not exposed to the current GitHub App installation.",
-    "Reality and canonical-role assignments are provisional until reconciled with local filesystem, runtime and evidence census.",
-    "Repository presence does not prove deployment, runtime health or whole-system completion."
+    "Connected GitHub repository count is not the total dormant/filesystem/Drive/cloud capability denominator.",
+    "Repository presence does not prove runtime health, deployment, productivity or whole-system completion.",
+    "Historical revisions may contain previously published topology; no history rewrite is performed."
   ]
 }

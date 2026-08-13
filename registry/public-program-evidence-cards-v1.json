@@ -16,6 +16,7 @@
     {"issue": 25, "family": "COMPETITION", "key": "arm_create_ai_optimization", "desired_project_presence": true},
     {"issue": 26, "family": "COMPETITION", "key": "acesat_education_ai_agent", "desired_project_presence": true},
     {"issue": 27, "family": "COMPETITION", "key": "ai_builders_hackathon_2026", "desired_project_presence": true},
-    {"issue": 28, "family": "COMMUNITY", "key": "community_social_referral_project_graph", "desired_project_presence": true}
+    {"issue": 28, "family": "COMMUNITY", "key": "community_social_referral_project_graph", "desired_project_presence": true},
+    {"issue": 31, "family": "COMPETITION", "key": "open_atlas_ai_social_good_2026", "desired_project_presence": true}
   ]
 }

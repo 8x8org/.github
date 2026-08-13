@@ -1,145 +1,17 @@
 {
-  "schema": "8x8.repository-identity-plan.v1",
+  "schema": "8x8.repository-identity-plan.public-safe.v1-superseded-view",
   "canonical_root": "fabric://8x8/core",
-  "generated_for": "connected GitHub estate visible during 2026-08-12/13 alignment pass",
-  "truth_law": "Repository name or description is metadata, not evidence of current runtime capability.",
+  "state": "PAST_PRESERVED_SUPERSEDED_CURRENT_VIEW",
+  "superseded_by": "registry/8x8-repository-identity-public-safe-v2.json",
+  "reason": "The previous public revision enumerated private repository names. Current public projection keeps private topology deny-by-default while preserving Git history.",
+  "connected_denominator": {
+    "total": 16,
+    "public": 5,
+    "private": 11,
+    "private_names": "REDACTED_FROM_CURRENT_PUBLIC_PROJECTION"
+  },
   "rename_policy": "DEFER_PENDING_DEPENDENCY_RECONCILIATION",
-  "description_policy": "Prefer role + reality + authority boundary; remove unsupported maturity/rank/count claims.",
-  "repositories": [
-    {
-      "repository": "8x8org/.github",
-      "visibility": "public",
-      "canonical_role": "PUBLIC_ORGANIZATION_IDENTITY_GOVERNANCE_PROGRAM",
-      "reality": "PUBLIC_PRESENT",
-      "desired_description": "©️8x8 by FlashTM8 ⚡️🌎🤖 public organization identity, governance, evidence program, community and contribution policy.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "8x8org/8x8-user-edition",
-      "visibility": "public",
-      "canonical_role": "CANONICAL_PUBLIC_SAFE_CLIENT",
-      "reality": "PUBLIC_PRESENT_PROTECTED_BETA",
-      "desired_description": "Canonical public-safe ©️8x8 by FlashTM8 ⚡️🌎🤖 client: One-Fabric interface, evidence, identity/permission and community projection.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "8x8org/8x8-protocol",
-      "visibility": "public",
-      "canonical_role": "PUBLIC_PROTOCOL_CONTRACTS",
-      "reality": "PUBLIC_PRESENT_PROTECTED_BETA",
-      "desired_description": "Public 8x8 identity, capability, lease, receipt, evidence and compatibility contracts/reference material.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "8x8org/8x8-venture-operator",
-      "visibility": "private",
-      "canonical_role": "COMPETITION_BOUNDED_VENTURE_OPERATOR",
-      "reality": "PRESENT_CANDIDATE",
-      "desired_description": "8x8 Venture Operator — competition-bounded AI operations product for founders; clean-room provenance and evidence-gated deployment.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "horbolsi/8x8",
-      "visibility": "private",
-      "canonical_role": "CORE_ENGINEERING_RUNTIME_ESTATE",
-      "reality": "PRIVATE_PRESENT_PLUS_HISTORY",
-      "desired_description": "Private core engineering/runtime estate for ©️8x8 by FlashTM8 ⚡️🌎🤖 under fabric://8x8/core; evidence-gated One-Fabric convergence.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "horbolsi/8x8-memory",
-      "visibility": "private",
-      "canonical_role": "DECISION_MEMORY_AND_PROVENANCE",
-      "reality": "PRIVATE_CONTINUITY",
-      "desired_description": "Private 8x8 decision memory, research provenance, evaluations, corrections and verified reusable knowledge.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "horbolsi/8x8-messages",
-      "visibility": "private",
-      "canonical_role": "AGENT_MESSAGING_PROTOCOL_ESTATE",
-      "reality": "PRIVATE_CONTINUITY",
-      "desired_description": "Private 8x8 protocol contracts, schemas, fixtures, adapters and compatibility tests for agent messaging.",
-      "rename_action": "KEEP"
-    },
-    {
-      "repository": "horbolsi/8x8-blockchain",
-      "visibility": "private",
-      "canonical_role": "NATIVE_8X8_NETWORK_AND_CHAIN_LAB",
-      "reality": "PRESENT_SIGNER_FREE_PLUS_FUTURE_GATED",
-      "desired_description": "Private signer-free 8x8 Network/chain laboratory: 8x8 ID, watch-only Wallet, 8x8Scan, testnet/economic research and +N adapters.",
-      "rename_action": "DEFER_PENDING_DEPENDENCY_RECONCILIATION"
-    },
-    {
-      "repository": "horbolsi/8x8-OS-Ecosystem",
-      "visibility": "public",
-      "canonical_role": "HISTORICAL_PUBLIC_CARRIER_AND_ECOSYSTEM_PROJECTION",
-      "reality": "PAST_PRESERVED_PLUS_PUBLIC_CARRIER",
-      "desired_description": "Historical/public carrier projection for ©️8x8 by FlashTM8 ⚡️🌎🤖; canonical public source authority lives in 8x8org/8x8-user-edition.",
-      "rename_action": "DEFER_CARRIER_AND_LINK_COMPATIBILITY"
-    },
-    {
-      "repository": "horbolsi/8x8-os-a-z",
-      "visibility": "public",
-      "canonical_role": "HISTORICAL_PUBLIC_PRESENTATION_AND_STUDIO_EVIDENCE",
-      "reality": "PAST_PRESERVED",
-      "desired_description": "Historical 8x8 A–Z presentation/Studio evidence and public documentation; preserved for provenance, not current runtime authority.",
-      "rename_action": "DEFER_PENDING_DEPENDENCY_RECONCILIATION"
-    },
-    {
-      "repository": "horbolsi/8x8-os-private",
-      "visibility": "private",
-      "canonical_role": "HISTORICAL_PRIVATE_RUNTIME_ESTATE",
-      "reality": "PAST_PRESERVED_PENDING_RECONCILIATION",
-      "desired_description": "Historical private 8x8 runtime/infrastructure estate preserved for capability census and One-Fabric reconciliation.",
-      "rename_action": "DEFER_PENDING_CENSUS"
-    },
-    {
-      "repository": "horbolsi/8x8-os-backup",
-      "visibility": "private",
-      "canonical_role": "HISTORICAL_BACKUP_EVIDENCE",
-      "reality": "PAST_PRESERVED",
-      "desired_description": "Historical 8x8 backup/preservation estate; non-canonical runtime, retained for recovery, provenance and census reconciliation.",
-      "rename_action": "KEEP_UNTIL_RECOVERY_AND_CENSUS_RECONCILED"
-    },
-    {
-      "repository": "horbolsi/8x8-os-hub",
-      "visibility": "private",
-      "canonical_role": "HISTORICAL_HUB_UI_AND_WEB3_CAPABILITY_DONOR",
-      "reality": "PAST_PRESERVED_PENDING_RECONCILIATION",
-      "desired_description": "Historical 8x8 Hub/Web3 UI and capability donor preserved for One-Fabric census, security review and interface convergence.",
-      "rename_action": "DEFER_PENDING_CENSUS_AND_ROUTE_RECONCILIATION"
-    },
-    {
-      "repository": "horbolsi/8x8-OS-unified",
-      "visibility": "private",
-      "canonical_role": "HISTORICAL_UNIFIED_SYSTEM_CANDIDATE",
-      "reality": "PAST_PRESERVED",
-      "desired_description": "Historical unified 8x8 system candidate preserved for provenance and capability reconciliation; not current product-version authority.",
-      "rename_action": "DEFER_PENDING_CENSUS",
-      "metadata_correction": "The legacy description's v1.0 wording must not be interpreted as current canonical product maturity; current public product remains 0.0.1 Beta."
-    },
-    {
-      "repository": "horbolsi/8x8-os-june2026",
-      "visibility": "private",
-      "canonical_role": "JUNE_2026_RUNTIME_SNAPSHOT",
-      "reality": "PAST_PRESERVED",
-      "desired_description": "June 2026 8x8 runtime snapshot preserved for agents, trading, content, service and capability provenance; historical counts are not current denominators.",
-      "rename_action": "DEFER_PENDING_CENSUS"
-    }
-  ],
-  "promotion_gate": {
-    "before_repository_rename": [
-      "dependency and deploy-link census",
-      "GitHub Actions and package/import reference census",
-      "Vercel/Replit/cloud reference census",
-      "documentation/link redirects verified",
-      "rollback plan",
-      "owner-visible receipt"
-    ],
-    "before_description_claims_current_capability": [
-      "fresh source/runtime evidence",
-      "explicit Past/Present/Future classification"
-    ]
-  }
+  "description_policy": "Public descriptions state canonical role + reality + authority boundary and avoid unsupported maturity/rank/count claims.",
+  "private_detail_authority": "Private One-Fabric memory/core registry",
+  "truth_boundary": "Repository metadata is not evidence of runtime capability."
 }

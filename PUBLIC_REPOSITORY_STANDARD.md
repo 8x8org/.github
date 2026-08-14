@@ -1,25 +1,35 @@
-# 8x8 Public Repository Standard V1
+# 8x8 Public Repository Standard V2
 
-Every public 8x8 repository should help a visitor understand the product, current evidence and safe contribution path within five minutes.
+A public 8x8 repository exists to let people **use, understand or integrate with an intentionally public 8x8 product, protocol or community surface**. Public visibility does not imply that the private One-Fabric implementation, OWNER_ROOT controls, research estate or proprietary source is open.
 
-## Required public surfaces
+## Default publication rule
 
-1. Clear one-sentence purpose.
-2. Current maturity and deployment state.
-3. Public/private boundary.
-4. Architecture diagram or structured explanation.
-5. Evidence-backed implementation status.
-6. Local run instructions.
-7. Tests and CI status.
-8. Security policy and private reporting route.
-9. Contribution guide and issue labels.
-10. License, upstream attribution and modification notices.
-11. Release manifests, SBOM and provenance when artifacts ship.
-12. Screenshots or demos that are labeled fixture, preview or live.
+**Consumer surface by default; source publication only by explicit owner-approved open-source decision.**
+
+A public product repository should normally expose only what a user, customer, integrator, contributor or verifier needs to consume the public product safely:
+
+1. clear product/service purpose;
+2. current maturity and evidence state;
+3. user-facing documentation and supported workflows;
+4. approved public API/SDK contracts and examples;
+5. intentionally public schemas, verifiers or interoperability standards;
+6. public/private authority boundary;
+7. security/privacy reporting route;
+8. release/status/provenance information appropriate for public consumption;
+9. screenshots/demos labeled as fixture, preview or live;
+10. license/terms for the material that is intentionally public.
+
+Architecture or source sufficient to reproduce the private system is **not** a required public surface.
+
+## Open-source exception
+
+Source code, local-run instructions, implementation architecture, tests and build details belong in a public repository only when that specific component has an explicit owner-approved open-source/public-source scope. A public-facing product may instead be delivered as a hosted service, client application, binary, package, public API or documentation-only integration surface while its implementation remains private.
+
+Publishing a public protocol or schema does not automatically publish the private implementation that powers it.
 
 ## Status vocabulary
 
-Use only:
+Use evidence-bound states such as:
 
 - `CLAIMED`
 - `DESIGNED`
@@ -34,56 +44,61 @@ Use only:
 - `BLOCKED`
 - `UNKNOWN`
 
-Never use “complete,” “live,” “autonomous,” “secure,” or “production-ready” without current evidence and declared scope.
+Never use “complete,” “live,” “autonomous,” “secure,” “production-ready,” “100/100” or “Top-1” without a declared denominator and current evidence.
 
-## Progressive releases
+## Product / implementation boundary
 
-A bounded release unit can ship independently when:
+Allowed public material may include:
 
-- its declared scope is complete;
-- its score is 100/100;
-- tests, security, privacy, accessibility and rollback gates pass;
-- dependencies are satisfied;
-- exact target is resolved;
-- artifact hashes and provenance exist;
-- the release does not imply completion of unrelated areas.
+- product UI and approved public assets;
+- user/account/profile documentation;
+- public pricing, release, support and competition information;
+- public API schemas and consumer examples;
+- receipt/verifier formats deliberately designed for public verification;
+- public interoperability contracts;
+- public research summaries that do not disclose proprietary implementation.
 
-## Visual quality
+OWNER_PRIVATE material includes by default:
 
-Public repositories should include:
+- One-Fabric orchestration/control-plane implementation;
+- private capability lattice, dormant/estate census and donor-selection logic;
+- private agent SOUL/body/authority and mission execution internals;
+- canonical memory/context graphs and continuity/anti-loop internals;
+- secret/vault/broker implementation and credential topology;
+- private device, deployment, incident, rollback and runtime topology;
+- proprietary parity/frontier/benchmark algorithms and private research deltas;
+- unpublished economic, treasury, custody, signing or settlement controls;
+- source sufficient to clone the private 8x8 system.
 
-- readable mobile-first documentation;
-- concise status tables;
-- screenshots or diagrams with alt text;
-- consistent color semantics;
-- accessible contrast and non-color status labels;
-- links among User Edition, Protocol and organization governance;
-- no fake telemetry or decorative financial claims.
+## Public integration pattern
 
-## Developer compatibility
+Prefer:
 
-An `8x8-compatible` project must declare:
+```text
+public user / integrator
+        ↓
+public product, client, API or documented contract
+        ↓ authenticated / policy boundary
+private One-Fabric implementation
+```
 
-- stable ID and version;
-- capabilities;
-- deny-by-default permissions;
-- resource limits;
-- data classes;
-- source and upstream provenance;
-- license;
-- SBOM and signature for releases;
-- conformance tests;
-- rollback.
+Public users receive the capability of the product, not OWNER_ROOT authority or the internal system that produces it.
 
-The 8x8 label is a compatibility statement, not a claim of ownership over upstream work.
+## Security and IP gate
 
-## Forbidden public material
+Before any public release, verify:
 
-- credentials and tokens;
-- wallet keys, seeds or signing authority;
-- private prompts, memory or messages;
-- exact private topology;
-- personal identifiers or precise location without explicit consent;
-- proprietary upstream code without permission;
-- unreviewed executors or remote-shell paths;
-- fabricated user, revenue, balance, agent or model counts.
+- no credentials, tokens, keys, seeds or private account data;
+- no private prompts, memories, messages or personal data;
+- no private repository/dormant/source inventory;
+- no exact private runtime/device/deployment topology;
+- no owner/admin/control-plane route graph or recovery procedure;
+- no proprietary internal implementation unless that component is explicitly approved for public source;
+- no fabricated telemetry or economic claims;
+- historical disclosure is treated separately from current-HEAD cleanup.
+
+If a real secret was ever public, rotate/revoke it. Removing it from the current branch does not revoke prior exposure.
+
+## Public evidence
+
+Public evidence should prove only the public claim it accompanies. It may expose release identifiers, artifact hashes and privacy-safe receipts where intentional, but must not leak private runtime topology or owner-control details merely to make a claim look more technical.

@@ -81,6 +81,7 @@ When summarizing 8x8:
 
 ## Canonical public references
 
+- [Public Repository Role Map](PUBLIC_REPOSITORY_MAP.md)
 - [8x8 User Edition](https://github.com/8x8org/8x8-user-edition)
 - [8x8 Protocol](https://github.com/8x8org/8x8-protocol)
 - [8x8 A→Z Guide](https://github.com/horbolsi/8x8-os-a-z)

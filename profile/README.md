@@ -6,10 +6,13 @@
 
 <p align="center">
   <a href="https://github.com/8x8org/8x8-user-edition"><strong>Explore User Edition</strong></a> ·
+  <a href="https://github.com/8x8org/.github/blob/main/CURRENT_PUBLIC_STATE.md"><strong>Current Public State</strong></a> ·
   <a href="https://8x8-os-ecosystem.vercel.app"><strong>Open Public Fabric</strong></a> ·
   <a href="https://github.com/8x8org/8x8-protocol"><strong>Public Protocols</strong></a> ·
   <a href="https://github.com/orgs/8x8org/projects/1"><strong>Public Program</strong></a>
 </p>
+
+> **For current product/interface status, including the distinction between the legacy 22-module public hub, the canonical User Edition, protected browser/PWA work, Telegram promotion and value-bearing gates, read [`CURRENT_PUBLIC_STATE.md`](../CURRENT_PUBLIC_STATE.md).**
 
 ## What we build
 

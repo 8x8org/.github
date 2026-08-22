@@ -22,7 +22,19 @@ Current public-safe interface direction is a responsive spatial cockpit organize
 
 with account/identity, Studio, agents/presence, wallet/chain, connectors, evidence/proof and progressively released user workflows in one client.
 
-The current protected user release train also includes an opt-in **Nearby / Missions** surface for future verified partners such as shops, hotels, services, NGOs and institutions. Its model supports evidence-backed missions (for example receipt/document/location/selfie evidence), points and reward entitlements while keeping actual token distribution or outgoing reward payment separately gated.
+### Current protected-client source checkpoint
+
+The latest source-converged protected-client release generation is **V33**, currently using application gate **V16**. This is an internal release-generation label, not a product-version or maturity claim.
+
+V33 unifies three current client layers on one intended protected browser origin:
+
+- installable browser/PWA experience;
+- opt-in **Nearby / Missions** for future verified partners such as shops, hotels, services, NGOs and institutions;
+- the current owner-visual **World V4 preview**, which reconciles the richer spatial command-center direction into the tenant-safe client.
+
+The current World V4 source census explicitly represents **32 UI/source surfaces**. That number is a source/interface denominator, **not a completion score**, not proof that all 32 are productive, and not proof that the preview is the promoted main World.
+
+World V4 remains an evidence-gated preview until deterministic and physical browser/mobile acceptance receipts support promotion. The existing promoted World must not be described as replaced merely because newer source exists.
 
 ## Public surfaces and their status
 
@@ -32,14 +44,16 @@ The current protected user release train also includes an opt-in **Nearby / Miss
 | `https://8x8-os-ecosystem.vercel.app` | Stable public carrier | **PRESENT_PROVEN for its documented beta routes; not proof of the whole protected user runtime** |
 | `horbolsi/8x8-os-a-z` | A→Z product guide + safe terminal demo | **PUBLIC GUIDE / DEMO** |
 | `horbolsi/8x8-OS-Ecosystem` | Historical 22-module full-stack public hub donor | **LEGACY PUBLIC DONOR / DEMO — not the current denominator** |
-| Browser/PWA protected user client | Rich tenant-safe user runtime | **SOURCE/RELEASE TRAIN ACTIVE; public promotion remains evidence-gated** |
-| Telegram Mini App | Same accepted protected browser origin inside Telegram | **PROMOTION GATED on exact browser acceptance and Telegram WebView verification** |
+| Browser/PWA protected user client | Rich tenant-safe user runtime | **V33 SOURCE-CONVERGED; protected deployment + physical browser acceptance still evidence-gated** |
+| Nearby / Missions | Partner discovery + evidence-backed tasks + points/reward-entitlement client | **SOURCE + PRODUCTION DATA FOUNDATION; no active partner/adoption claim** |
+| World V4 preview | Richer 32-surface spatial cockpit preview | **SOURCE_PRESENT / PREVIEW; not promoted main World** |
+| Telegram Mini App | Same exact accepted protected browser origin inside Telegram | **PROMOTION GATED on V33 physical browser acceptance, exact-head recheck and Telegram WebView verification** |
 | Android installed client / APK | PWA/TWA wrapper around accepted protected origin | **BUILD/RELEASE TRAIN; signed public release requires its own receipt** |
 | Apple installed experience | PWA/Add-to-Home-Screen now; native App Store later | **PWA path available by platform capability; public App Store release separately gated** |
 
 ## Current partner / mission economy truth
 
-The production data plane now contains the partner/mission/reward schema required for verified nearby missions. This is **infrastructure presence**, not evidence of active commercial partnerships.
+The production data plane contains the partner/mission/reward schema required for verified nearby missions. This is **infrastructure presence**, not evidence of active commercial partnerships.
 
 Current public-truth boundary:
 
@@ -48,7 +62,8 @@ Current public-truth boundary:
 - mission evidence is represented by hashes/opaque private-object handles rather than raw media in ordinary mission tables;
 - task completion can award points and create reward **entitlements**;
 - a verified claim does **not** itself execute a token airdrop or move money;
-- no organization should be described as an active 8x8 partner without current partnership evidence.
+- no organization should be described as an active 8x8 partner without current partnership evidence;
+- current schema presence must not be misreported as current partner adoption, mission volume or paid rewards.
 
 ## Money / token truth
 
@@ -60,7 +75,7 @@ As of this checkpoint, do **not** infer live revenue, token distribution or sett
 - minting, token airdrops, funded liquidity and live trading are not activated by this public checkpoint;
 - planned token identities or reward entitlements are not the same thing as issued/on-chain tokens.
 
-Accordingly, statements such as “the token is live,” “airdrops are active,” “Telegram is fully released,” or “22 modules are the complete current system” require newer direct evidence before they can be made.
+Accordingly, statements such as “the token is live,” “airdrops are active,” “Telegram is fully released,” “World V4 is the current production World,” or “22 modules are the complete current system” require newer direct evidence before they can be made.
 
 ## Revenue model vs. current revenue
 
@@ -75,9 +90,10 @@ When summarizing 8x8:
 1. Do not describe the ASCII demo or legacy React hub as the only/current interface.
 2. Do not describe Telegram Mini App promotion as production-proven without a current acceptance receipt.
 3. Treat the historical “22 features” as a legacy public-hub module count, not the current total capability denominator.
-4. Separate **public stable carrier**, **protected user release train**, **source-present features**, and **future/value-bearing gates**.
-5. Do not infer active partnerships, token issuance, payment settlement or revenue from schema/source existence.
-6. Prefer the canonical User Edition and this current-state page when older public materials conflict.
+4. Treat the World V4 “32 surfaces” as the current explicit **source/UI census**, not as 32 verified productive features and not as a 100% score.
+5. Separate **public stable carrier**, **protected V33 source/release train**, **source-present features**, **physically accepted features**, and **future/value-bearing gates**.
+6. Do not infer active partnerships, token issuance, payment settlement or revenue from schema/source existence.
+7. Prefer the canonical User Edition and this current-state page when older public materials conflict.
 
 ## Canonical public references
 

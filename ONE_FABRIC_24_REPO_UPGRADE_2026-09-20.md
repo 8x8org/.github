@@ -59,9 +59,17 @@ Each repo is scored on: role clarity, documentation completeness, tests, CI, sec
 
 A candidate upgrade is promoted only when it improves measured quality without weakening authority, privacy, security or historical provenance.
 
-## Known contradiction requiring resolution
+## Native network authority — RESOLVED
 
-The current `horbolsi/8x8-blockchain` README describes the dedicated 8x8 Network as the native home and Bitcoin as an external adapter. Other preserved One-Fabric policy has described canonical 8x8 as Bitcoin-only. This contradiction must be resolved from the latest signed/owner-authoritative evidence before either statement is propagated to the rest of the estate.
+Owner clarification dated 2026-09-20 is current authority:
+
+- the dedicated **8x8 Network / 8x8 Blockchain** is the native and canonical home of the 8x8 coin and its native economic system;
+- Bitcoin, Ethereum-family networks, BNB Smart Chain, Solana-family networks, TON-family networks, Pi, and future qualified chains are **external +N networks/adapters/representations**, not native homes;
+- historical Bitcoin-only or Bitcoin-parent designs remain `PAST_PRESERVED / SUPERSEDED` for provenance;
+- external-network representations must preserve identity, supply conservation, replay protection, custody/bridge controls, receipts and explicit activation gates;
+- no external network may independently issue another canonical native 8x8 coin.
+
+This resolution must be propagated across architecture, interface, protocol, A→Z documentation, user edition, blockchain tooling and future deployment evidence.
 
 ## Continuous loop
 
